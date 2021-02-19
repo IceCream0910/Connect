@@ -434,7 +434,7 @@ class Room extends Component {
 			textArea.select()
 			try {
 				document.execCommand('copy')
-				message.success("Link copied to clipboard!")
+				message.success("초대 링크가 복사되었어요!")
 			} catch (err) {
 				message.error("Failed to copy")
 			}
@@ -442,7 +442,7 @@ class Room extends Component {
 			return
 		}
 		navigator.clipboard.writeText(text).then(function () {
-			message.success("Link copied to clipboard!")
+			message.success("초대 링크가 복사되었어요!")
 		}, () => {
 			message.error("Failed to copy")
 		})
@@ -459,14 +459,14 @@ class Room extends Component {
 	}
 
 	render() {
-		if(this.isChromeOrFirefox() === false){
+		/*if(this.isChromeOrFirefox() === false){
 			return (
 				<div style={{background: "white", width: "30%", height: "auto", padding: "20px", minWidth: "400px",
 						textAlign: "center", margin: "auto", marginTop: "50px", justifyContent: "center"}}>
 					<h1>Use Chrome or Firefox</h1>
 				</div>
 			)
-		}
+		}*/
 		return (
 			<div>
 				{this.state.askForUsername === true ?
@@ -522,17 +522,17 @@ class Room extends Component {
 
 						<Modal show={this.state.showModal} onHide={this.closeChat} style={{ zIndex: "999999" }}>
 							<Modal.Header closeButton>
-								<Modal.Title>Chat Room</Modal.Title>
+								<Modal.Title>채팅</Modal.Title>
 							</Modal.Header>
 							<Modal.Body style={{ overflow: "auto", overflowY: "auto", height: "400px", textAlign: "left" }} >
 								{this.state.messages.length > 0 ? this.state.messages.map((item, index) => (
 									<div key={index} style={{textAlign: "left"}}>
 										<p style={{ wordBreak: "break-all" }}><b>{item.sender}</b>: {item.data}</p>
 									</div>
-								)) : <p>No message yet</p>}
+								)) : <p>이곳에서 참가자들과 채팅해보세요.</p>}
 							</Modal.Body>
 							<Modal.Footer className="div-send-msg">
-								<Input placeholder="Message" value={this.state.message} onChange={e => this.handleMessage(e)} />
+								<Input placeholder="메시지를 입력하세요" value={this.state.message} onChange={e => this.handleMessage(e)} />
 								<Badge color="secondary" >
 									<IconButton style={{ color: "#424242" }} onClick={this.sendMessage}>
 										<SendOutlined />
