@@ -32,8 +32,8 @@ const peerConnectionConfig = {
  		{ url: 'stun:stun.l.google.com:19302', },
         {
             urls: "turn:numb.viagenie.ca",
-            username: "taein2370@gmail.com",
-            credential: "yti050910"
+            username: "icecream2370@kakao.com",
+            credential: "pdf4?fELhM{evYEM"
 		},
     ]
 }
