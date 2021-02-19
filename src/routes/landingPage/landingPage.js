@@ -41,7 +41,7 @@ class LandingPage extends Component {
     var room_id = Math.random().toString(36).substring(2, 7)
     console.log(room_id)
     this.props.history.push(`/room`,{meet:room_id,jurl:window.location.href+"web/"+room_id+"/"+room_id.charCodeAt(0).toString()+room_id.charCodeAt(1).toString()+room_id.charCodeAt(2).toString() })
-    message.success("Meet created!")
+    message.success("회의가 생성되었어요!")
     
   }
 
@@ -50,16 +50,15 @@ class LandingPage extends Component {
       <div className='container'>
         <div className='filter'></div>
         <div className='c-body'>
-          <h4 className='logo-name'>connect</h4>
+          <h4 className='logo-name'>황태 Meet</h4>
           {/* <img alt='...' src={logo} className='img-logo' /> */}
-          <div className='img-logo' />
           <div className={`i-div ${this.state.hide_ele ? 'hidden' : ''}`}>
             <InputGroup className='mb-3'>
               <InputGroup.Prepend>
                 <InputGroup.Text id='basic-addon1'>@</InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
-                placeholder='Meeting ID'
+                placeholder='회의 ID'
                 aria-label='Username'
                 aria-describedby='basic-addon1'
                 onChange={this.handleUserChange}
@@ -68,7 +67,7 @@ class LandingPage extends Component {
 
             <InputGroup className='mb-3'>
               <FormControl
-                placeholder='Password'
+                placeholder='비밀번호'
                 aria-label="Recipient's username"
                 aria-describedby='basic-addon2'
                 onChange={this.handlePassChange}
@@ -78,10 +77,10 @@ class LandingPage extends Component {
               </InputGroup.Append>
             </InputGroup>
             <Button className='b-ui' variant='info' onClick={this.join}>
-              Join
+              참가
             </Button>
             <Button className='b-ui' variant='secondary' onClick={this.toggleMeet}>
-              Back
+              취소
             </Button>
           </div>
           <div className={`i-div ${this.state.hide_ele ? '' : 'hidden'}`}>
@@ -90,19 +89,16 @@ class LandingPage extends Component {
               variant='outline-dark'
               onClick={this.toggleMeet}
             >
-              Join Meet
+              회의 참가
             </Button>
             <Button
               className='b-ui'
               variant='outline-primary'
               onClick={this.create_meet}
             >
-              Create Meet
+              회의 생성
             </Button>
           </div>
-        <IconButton style={{color: "black"}} onClick={() => window.location.href="https://github.com/RayanGandhi/Connect"}>
-                  <GitHubIcon />
-        </IconButton>
         </div>
       </div>
     );
