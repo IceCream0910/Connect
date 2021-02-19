@@ -34,16 +34,18 @@ body {
 
 .btn-down {
     z-index: 2;
-    position: absolute; 
-    background: transparent;
-    bottom: 24px;
+    position: fixed;
+    background: #fff;
+    bottom: 0;
     width: 100%;
     height: auto;
+    padding:20px;
 }
 
 video {
     transition: transform .2s;
-    background-color: #282a36;
+    background-color: #000;
+    border:none;
 }
 
 video:active {
