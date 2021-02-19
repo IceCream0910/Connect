@@ -22,7 +22,7 @@ import Modal from 'react-bootstrap/Modal'
 import 'bootstrap/dist/css/bootstrap.css'
 import "./room.scss";
 
-const server_url = process.env.NODE_ENV === 'production' ? 'https://projectoo7.herokuapp.com/' : "http://localhost:4001"
+const server_url = process.env.NODE_ENV === 'production' ? 'https://hwangtae-meet.herokuapp.com/' : "http://localhost:4001"
 
 var connections = {}
 
@@ -32,18 +32,8 @@ const peerConnectionConfig = {
  		{ url: 'stun:stun.l.google.com:19302', },
         {
             urls: "turn:numb.viagenie.ca",
-            username: "limamol724@aenmail.net",
-            credential: "asdfghjkl"
-		},
-		{
-            urls: "turn:numb.viagenie.ca",
-            username: "bitarid544@arasj.net",
-            credential: "numb"
-		},
-		{
-            urls: "turn:numb.viagenie.ca",
-            username: "a@accordmail.net",
-            credential: "asd"
+            username: "taein2370@gmail.com",
+            credential: "yti050910"
 		},
     ]
 }
